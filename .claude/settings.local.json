@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.specify/scripts/bash/setup-plan.sh:*)",
+      "Bash(D:/Q4_hackathon/.specify/scripts/bash/check-prerequisites.sh:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
