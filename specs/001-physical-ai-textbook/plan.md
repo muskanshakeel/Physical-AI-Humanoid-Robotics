@@ -128,20 +128,20 @@ rag-chatbot/
 
 ## Decisions Requiring Documentation
 
-- Simulation vs real robots
-- RTX workstation vs cloud Isaac Sim
-- Humanoid body complexity (URDF/SDF depth)
-- Jetson deployment limitations
-- Voice autonomy vs button-trigger autonomy
-- Nav2 limitations for bipeds
+- **Simulation vs. Real Robots**: What is the primary focus for examples and projects? Will real robot examples be provided as extensions, or will they be a core part of the curriculum? How will the book address the gap between simulation and reality (e.g., sensor noise, actuator dynamics)?
+- **RTX Workstation vs. Cloud Isaac Sim**: What are the recommended and minimum hardware specifications for running Isaac Sim? Will the book provide guidance on using cloud-based instances of Isaac Sim as an alternative to a local RTX workstation?
+- **Humanoid Body Complexity (URDF/SDF Depth)**: How complex will the reference humanoid robot model be? Will it be a simple biped with basic kinematics, or a more complex model with a full range of motion and sensor suite?
+- **Jetson Deployment Limitations**: What are the specific performance limitations of running the book's examples on Jetson Orin Nano vs. Orin NX? How will the book guide users in optimizing their code for these devices?
+- **Voice Autonomy vs. Button-Trigger Autonomy**: Will the capstone project rely exclusively on voice commands for triggering robot actions, or will there be alternative methods (e.g., a GUI button) for users who may not have a microphone array?
+- **Nav2 Limitations for Bipeds**: How will the book address the challenges of using Nav2, which is primarily designed for wheeled robots, with bipedal platforms? Will it provide custom configurations or alternative navigation strategies?
 
 ## Tradeoff Examples
 
-- Gazebo (fast) vs Isaac (photorealistic, GPU heavy)
-- Jetson Orin Nano vs Orin NX
-- Quadruped proxy vs humanoid model
-- Local control loops vs cloud inference
-- End-to-end VLA vs modular ROS pipelines
+- **Gazebo vs. Isaac Sim**: Gazebo offers a faster, more lightweight simulation environment that is well-suited for basic robotics tasks and ROS integration. Isaac Sim, on the other hand, provides photorealistic rendering and advanced sensor simulation, but at the cost of requiring a powerful GPU. The choice between them will depend on the specific learning objectives of each chapter.
+- **Jetson Orin Nano vs. Orin NX**: The Jetson Orin Nano is a more affordable option for edge AI, but the Orin NX provides significantly more processing power. The book will need to provide clear guidance on which device is suitable for which examples, and how to optimize code for each.
+- **Quadruped Proxy vs. Humanoid Model**: A quadruped model (like Unitree Go2) is more stable and easier to control than a humanoid model, making it a good proxy for teaching many robotics concepts. However, a humanoid model is more relevant to the book's title and long-term goals. The book may use a combination of both, starting with the quadruped and progressing to the humanoid.
+- **Local Control Loops vs. Cloud Inference**: Running control loops locally on the robot provides lower latency and higher reliability. However, offloading complex AI inference tasks to the cloud can enable more sophisticated capabilities. The book will explore the tradeoffs between these two approaches and provide examples of each.
+- **End-to-End VLA vs. Modular ROS Pipelines**: An end-to-end Vision-Language-Action (VLA) model can offer a more seamless and integrated approach to robot control. However, a modular ROS pipeline, with separate nodes for perception, planning, and action, is more flexible and easier to debug. The book will likely teach the modular approach first, then introduce the end-to-end VLA as a more advanced topic.
 
 ## Testing Strategy
 

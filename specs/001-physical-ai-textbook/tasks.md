@@ -30,11 +30,11 @@ description: "Task list for Physical AI & Humanoid Robotics — An AI-Native Tex
 
 **Purpose**: Project initialization and basic Docusaurus and RAG chatbot structure (FR-013)
 
-- [ ] T001 Create Docusaurus project skeleton in `docs/`
-- [ ] T002 Initialize `rag-chatbot/backend/` as a FastAPI project
-- [ ] T003 Initialize `rag-chatbot/frontend/` for a lightweight UI (optional, can be integrated into Docusaurus later)
-- [ ] T004 [P] Configure Docusaurus `docusaurus.config.js` for GitHub Pages deployment (FR-007, SC-006)
-- [ ] T005 [P] Create initial `docs/intro.md` and `docs/deployment.md` (FR-007, SC-009)
+- [x] T001 Create Docusaurus project skeleton in `docs/`
+- [x] T002 Initialize `rag-chatbot/backend/` as a FastAPI project
+- [x] T003 Initialize `rag-chatbot/frontend/` for a lightweight UI (optional, can be integrated into Docusaurus later)
+- [x] T004 [P] Configure Docusaurus `docusaurus.config.js` for GitHub Pages deployment (FR-007, SC-006)
+- [x] T005 [P] Create initial `docs/intro.md` and `docs/deployment.md` (FR-007, SC-009)
 
 ---
 
@@ -44,11 +44,11 @@ description: "Task list for Physical AI & Humanoid Robotics — An AI-Native Tex
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T006 Create Docusaurus module directories: `docs/module1/`, `docs/module2/`, `docs/module3/`, `docs/module4/` (FR-001, FR-014, SC-001)
-- [ ] T007 Implement base RAG chatbot backend structure in `rag-chatbot/backend/app/` with `api/`, `services/`, `models/` directories (FR-006)
-- [ ] T008 Configure Neon Serverless Postgres and Qdrant Cloud client connections in `rag-chatbot/backend/app/services/` (FR-006)
-- [ ] T009 Create base data models for RAG chatbot (e.g., `Query`, `Answer`, `Context`) in `rag-chatbot/backend/app/models/`
-- [ ] T010 Implement FastAPI `main.py` in `rag-chatbot/backend/` with basic routing setup
+- [x] T006 Create Docusaurus module directories: `docs/module1/`, `docs/module2/`, `docs/module3/`, `docs/module4/` (FR-001, FR-014, SC-001)
+- [x] T007 Implement base RAG chatbot backend structure in `rag-chatbot/backend/app/` with `api/`, `services/`, `models/` directories (FR-006)
+- [x] T008 Configure Neon Serverless Postgres and Qdrant Cloud client connections in `rag-chatbot/backend/app/services/` (FR-006)
+- [x] T009 Create base data models for RAG chatbot (e.g., `Query`, `Answer`, `Context`) in `rag-chatbot/backend/app/models/`
+- [x] T010 Implement FastAPI `main.py` in `rag-chatbot/backend/` with basic routing setup
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -62,13 +62,23 @@ description: "Task list for Physical AI & Humanoid Robotics — An AI-Native Tex
 
 ### Implementation for User Story 1
 
-- [ ] T011 [US1] Create `docs/module1/chapter1-concepts.md` (ROS 2 concepts: rclpy, Nodes, Topics, Services, Actions, URDF) (FR-002, FR-014)
-- [ ] T012 [US1] Create `docs/module1/chapter2-tooling.md` (ROS 2 tooling, e.g., `ros2 run`, `ros2 topic`, `rviz`) (FR-002, FR-014)
-- [ ] T013 [US1] Create `docs/module1/chapter3-implementation.md` (ROS 2 basic node implementation walkthrough) (FR-002, FR-003, FR-014)
-- [ ] T014 [US1] Create `docs/module1/chapter4-casestudy.md` (ROS 2 simple robotic arm control example) (FR-002, FR-003, FR-014)
-- [ ] T015 [US1] Create `docs/module1/chapter5-miniproject.md` (ROS 2 mini-project: basic mobile robot navigation) (FR-002, FR-003, FR-014)
-- [ ] T016 [US1] Create `docs/module1/chapter6-debugging.md` (ROS 2 debugging & common failures) (FR-002, FR-014)
-- [ ] T017 [US1] Ensure all code examples in `docs/module1/` are executable on Ubuntu 22.04 with ROS2 Humble/Iron (FR-003, SC-002)
+- [x] T011 [US1] Create `docs/module1/chapter1-concepts.md` (ROS 2 concepts: rclpy, Nodes, Topics, Services, Actions, URDF) (FR-002, FR-014)
+- [x] T012 [US1] Create `docs/module1/chapter2-tooling.md` (ROS 2 tooling, e.g., `ros2 run`, `ros2 topic`, `rviz`) (FR-002, FR-014)
+- [x] T013 [US1] Create `docs/module1/chapter3-implementation.md` (ROS 2 basic node implementation walkthrough) (FR-002, FR-003, FR-014)
+- [x] T014 [US1] Create `docs/module1/chapter4-casestudy.md` (ROS 2 simple robotic arm control example) (FR-002, FR-003, FR-014)
+- [x] T015 [US1] Create `docs/module1/chapter5-miniproject.md` (ROS 2 mini-project: basic mobile robot navigation) (FR-002, FR-003, FR-014)
+- [x] T016 [US1] Create `docs/module1/chapter6-debugging.md` (ROS 2 debugging & common failures) (FR-002, FR-014)
+
+### Code Implementation for User Story 1 (Unblocking T017)
+
+- [x] T011.1 [US1] Implement code examples for `docs/module1/chapter1-concepts.md`
+- [x] T012.1 [US1] Implement code examples for `docs/module1/chapter2-tooling.md`
+- [x] T013.1 [US1] Implement code examples for `docs/module1/chapter3-implementation.md`
+- [x] T014.1 [US1] Implement code examples for `docs/module1/chapter4-casestudy.md`
+- [x] T015.1 [US1] Implement code examples for `docs/module1/chapter5-miniproject.md`
+- [x] T016.1 [US1] Implement code examples for `docs/module1/chapter6-debugging.md`
+
+- [x] T017 [US1] Ensure all code examples in `docs/module1/` are executable on Ubuntu 22.04 with ROS2 Humble/Iron (FR-003, SC-002)
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
@@ -82,13 +92,23 @@ description: "Task list for Physical AI & Humanoid Robotics — An AI-Native Tex
 
 ### Implementation for User Story 2
 
-- [ ] T018 [US2] Create `docs/module2/chapter1-concepts.md` (Digital twin concepts, Gazebo/Unity basics, physics simulation) (FR-002, FR-014)
-- [ ] T019 [US2] Create `docs/module2/chapter2-tooling.md` (Gazebo/Unity simulation tooling, URDF/SDF integration) (FR-002, FR-014)
-- [ ] T020 [US2] Create `docs/module2/chapter3-implementation.md` (Gazebo/Unity robot model loading and interaction walkthrough) (FR-002, FR-003, FR-014)
-- [ ] T021 [US2] Create `docs/module2/chapter4-casestudy.md` (Gazebo/Unity sensor simulation and data publishing example) (FR-002, FR-003, FR-014)
-- [ ] T022 [US2] Create `docs/module2/chapter5-miniproject.md` (Gazebo/Unity mini-project: environment interaction) (FR-002, FR-003, FR-014)
-- [ ] T023 [US2] Create `docs/module2/chapter6-debugging.md` (Gazebo/Unity simulation debugging & common failures) (FR-002, FR-014)
-- [ ] T024 [US2] Ensure all code examples and simulation worlds in `docs/module2/` are executable/loadable on Ubuntu 22.04 (FR-003, SC-002, SC-003)
+- [x] T018 [US2] Create `docs/module2/chapter1-concepts.md` (Digital twin concepts, Gazebo/Unity basics, physics simulation) (FR-002, FR-014)
+- [x] T019 [US2] Create `docs/module2/chapter2-tooling.md` (Gazebo/Unity simulation tooling, URDF/SDF integration) (FR-002, FR-014)
+- [x] T020 [US2] Create `docs/module2/chapter3-implementation.md` (Gazebo/Unity robot model loading and interaction walkthrough) (FR-002, FR-003, FR-014)
+- [x] T021 [US2] Create `docs/module2/chapter4-casestudy.md` (Gazebo/Unity sensor simulation and data publishing example) (FR-002, FR-003, FR-014)
+- [x] T022 [US2] Create `docs/module2/chapter5-miniproject.md` (Gazebo/Unity mini-project: environment interaction) (FR-002, FR-003, FR-014)
+- [x] T023 [US2] Create `docs/module2/chapter6-debugging.md` (Gazebo/Unity simulation debugging & common failures) (FR-002, FR-014)
+
+### Code and Simulation Implementation for User Story 2 (Unblocking T024)
+
+- [x] T018.1 [US2] Implement code examples and simulation worlds for `docs/module2/chapter1-concepts.md`
+- [x] T019.1 [US2] Implement code examples and simulation worlds for `docs/module2/chapter2-tooling.md`
+- [x] T020.1 [US2] Implement code examples and simulation worlds for `docs/module2/chapter3-implementation.md`
+- [x] T021.1 [US2] Implement code examples and simulation worlds for `docs/module2/chapter4-casestudy.md`
+- [x] T022.1 [US2] Implement code examples and simulation worlds for `docs/module2/chapter5-miniproject.md`
+- [x] T023.1 [US2] Implement code examples and simulation worlds for `docs/module2/chapter6-debugging.md`
+
+- [x] T024 [US2] Ensure all code examples and simulation worlds in `docs/module2/` are executable/loadable on Ubuntu 22.04 (FR-003, SC-002, SC-003)
 
 **Checkpoint**: At this point, User Stories 1 AND 2 should both work independently
 
@@ -102,13 +122,23 @@ description: "Task list for Physical AI & Humanoid Robotics — An AI-Native Tex
 
 ### Implementation for User Story 3
 
-- [ ] T025 [US3] Create `docs/module3/chapter1-concepts.md` (NVIDIA Isaac Sim/ROS concepts, Omniverse USD, VSLAM, Nav2 basics) (FR-002, FR-014)
-- [ ] T026 [US3] Create `docs/module3/chapter2-tooling.md` (NVIDIA Isaac tooling, Jetson setup) (FR-002, FR-014)
-- [ ] T027 [US3] Create `docs/module3/chapter3-implementation.md` (Isaac ROS VSLAM implementation walkthrough on Jetson) (FR-002, FR-003, FR-014)
-- [ ] T028 [US3] Create `docs/module3/chapter4-casestudy.md` (Isaac Sim + Nav2 integration for path planning example) (FR-002, FR-003, FR-014)
-- [ ] T029 [US3] Create `docs/module3/chapter5-miniproject.md` (Isaac Sim mini-project: object detection and manipulation) (FR-002, FR-003, FR-014)
-- [ ] T030 [US3] Create `docs/module3/chapter6-debugging.md` (NVIDIA Isaac debugging & common failures) (FR-002, FR-014)
-- [ ] T031 [US3] Ensure all code examples and simulation scenes in `docs/module3/` are executable/loadable (FR-003, SC-002, SC-003)
+- [x] T025 [US3] Create `docs/module3/chapter1-concepts.md` (NVIDIA Isaac Sim/ROS concepts, Omniverse USD, VSLAM, Nav2 basics) (FR-002, FR-014)
+- [x] T026 [US3] Create `docs/module3/chapter2-tooling.md` (NVIDIA Isaac tooling, Jetson setup) (FR-002, FR-014)
+- [x] T027 [US3] Create `docs/module3/chapter3-implementation.md` (Isaac ROS VSLAM implementation walkthrough on Jetson) (FR-002, FR-003, FR-014)
+- [x] T028 [US3] Create `docs/module3/chapter4-casestudy.md` (Isaac Sim + Nav2 integration for path planning example) (FR-002, FR-003, FR-014)
+- [x] T029 [US3] Create `docs/module3/chapter5-miniproject.md` (Isaac Sim mini-project: object detection and manipulation) (FR-002, FR-003, FR-014)
+- [x] T030 [US3] Create `docs/module3/chapter6-debugging.md` (NVIDIA Isaac debugging & common failures) (FR-002, FR-014)
+
+### Code and Simulation Implementation for User Story 3 (Unblocking T031)
+
+- [x] T025.1 [US3] Implement code examples and simulation scenes for `docs/module3/chapter1-concepts.md`
+- [x] T026.1 [US3] Implement code examples and simulation scenes for `docs/module3/chapter2-tooling.md`
+- [x] T027.1 [US3] Implement code examples and simulation scenes for `docs/module3/chapter3-implementation.md`
+- [x] T028.1 [US3] Implement code examples and simulation scenes for `docs/module3/chapter4-casestudy.md`
+- [x] T029.1 [US3] Implement code examples and simulation scenes for `docs/module3/chapter5-miniproject.md`
+- [x] T030.1 [US3] Implement code examples and simulation scenes for `docs/module3/chapter6-debugging.md`
+
+- [x] T031 [US3] Ensure all code examples and simulation scenes in `docs/module3/` are executable/loadable (FR-003, SC-002, SC-003)
 
 **Checkpoint**: All user stories should now be independently functional
 
@@ -122,13 +152,24 @@ description: "Task list for Physical AI & Humanoid Robotics — An AI-Native Tex
 
 ### Implementation for User Story 4
 
-- [ ] T032 [US4] Create `docs/module4/chapter1-concepts.md` (VLA pipeline: Whisper, LLM planning, ROS2 action graph) (FR-002, FR-014)
-- [ ] T033 [US4] Create `docs/module4/chapter2-tooling.md` (VLA specific tooling: Whisper setup, LLM API integration) (FR-002, FR-014)
-- [ ] T034 [US4] Create `docs/module4/chapter3-implementation.md` (Whisper to text processing walkthrough) (FR-002, FR-003, FR-014)
-- [ ] T035 [US4] Create `docs/module4/chapter4-casestudy.md` (LLM-based task decomposition and ROS2 action graph generation) (FR-002, FR-003, FR-014)
-- [ ] T036 [US4] Create `docs/module4/chapter5-miniproject.md` (VLA mini-project: simple voice command to robot action) (FR-002, FR-003, FR-014)
-- [ ] T037 [US4] Create `docs/module4/chapter6-casestudy.md` (Capstone Project: Autonomous Humanoid (Voice → Plan → Navigate → Detect → Manipulate)) (FR-008, FR-002, FR-003, FR-014)
-- [ ] T038 [US4] Create `docs/module4/chapter7-debugging.md` (VLA pipeline debugging & common failures) (FR-002, FR-014)
+- [x] T032 [US4] Create `docs/module4/chapter1-concepts.md` (VLA pipeline: Whisper, LLM planning, ROS2 action graph) (FR-002, FR-014)
+- [x] T033 [US4] Create `docs/module4/chapter2-tooling.md` (VLA specific tooling: Whisper setup, LLM API integration) (FR-002, FR-014)
+- [x] T034 [US4] Create `docs/module4/chapter3-implementation.md` (Whisper to text processing walkthrough) (FR-002, FR-003, FR-014)
+- [x] T035 [US4] Create `docs/module4/chapter4-casestudy.md` (LLM-based task decomposition and ROS2 action graph generation) (FR-002, FR-003, FR-014)
+- [x] T036 [US4] Create `docs/module4/chapter5-miniproject.md` (VLA mini-project: simple voice command to robot action) (FR-002, FR-003, FR-014)
+- [x] T037 [US4] Create `docs/module4/chapter6-casestudy.md` (Capstone Project: Autonomous Humanoid (Voice → Plan → Navigate → Detect → Manipulate)) (FR-008, FR-002, FR-003, FR-014)
+- [x] T038 [US4] Create `docs/module4/chapter7-debugging.md` (VLA pipeline debugging & common failures) (FR-002, FR-014)
+
+### Code and VLA Sequence Implementation for User Story 4 (Unblocking T039)
+
+- [ ] T032.1 [US4] Implement code examples and VLA sequences for `docs/module4/chapter1-concepts.md`
+- [ ] T033.1 [US4] Implement code examples and VLA sequences for `docs/module4/chapter2-tooling.md`
+- [ ] T034.1 [US4] Implement code examples and VLA sequences for `docs/module4/chapter3-implementation.md`
+- [ ] T035.1 [US4] Implement code examples and VLA sequences for `docs/module4/chapter4-casestudy.md`
+- [ ] T036.1 [US4] Implement code examples and VLA sequences for `docs/module4/chapter5-miniproject.md`
+- [ ] T037.1 [US4] Implement code examples and VLA sequences for `docs/module4/chapter6-casestudy.md`
+- [ ] T038.1 [US4] Implement code examples and VLA sequences for `docs/module4/chapter7-debugging.md`
+
 - [ ] T039 [US4] Ensure all code examples and VLA sequences in `docs/module4/` are executable/validatable (FR-003, SC-002, SC-005, SC-008)
 
 ---
@@ -141,15 +182,15 @@ description: "Task list for Physical AI & Humanoid Robotics — An AI-Native Tex
 
 ### Implementation for User Story 5
 
-- [ ] T040 [US5] Implement FastAPI endpoint for RAG chatbot query (`rag-chatbot/backend/app/api/rag.py`) (FR-006)
-- [ ] T041 [US5] Implement service to embed book content and store in Qdrant (`rag-chatbot/backend/app/services/embedding_service.py`) (FR-004)
-- [ ] T042 [US5] Implement service to retrieve relevant content from Qdrant based on query (`rag-chatbot/backend/app/services/retrieval_service.py`) (FR-004, FR-005)
-- [ ] T043 [US5] Integrate OpenAI Agents/ChatKit SDK for RAG generation logic (`rag-chatbot/backend/app/services/rag_service.py`) (FR-004, FR-005)
-- [ ] T044 [US5] Define data models for RAG requests/responses in `rag-chatbot/backend/app/models/rag_models.py`
-- [ ] T045 [US5] Implement a lightweight frontend in `rag-chatbot/frontend/` to interact with the RAG backend (display chat interface)
-- [ ] T046 [US5] Develop a process to load all `docs/` content into the RAG chatbot's knowledge base (`rag-chatbot/data/ingest.py`) (FR-004)
-- [ ] T047 [US5] Implement logic for context-aware queries based on selected text (FR-005)
-- [ ] T048 [US5] Ensure RAG chatbot returns accurate and relevant answers with citations (SC-004)
+- [x] T040 [US5] Implement FastAPI endpoint for RAG chatbot query (`rag-chatbot/backend/app/api/rag.py`) (FR-006)
+- [x] T041 [US5] Implement service to embed book content and store in Qdrant (`rag-chatbot/backend/app/services/embedding_service.py`) (FR-004)
+- [x] T042 [US5] Implement service to retrieve relevant content from Qdrant based on query (`rag-chatbot/backend/app/services/retrieval_service.py`) (FR-004, FR-005)
+- [x] T043 [US5] Integrate OpenAI Agents/ChatKit SDK for RAG generation logic (`rag-chatbot/backend/app/services/rag_service.py`) (FR-004, FR-005)
+- [x] T044 [US5] Define data models for RAG requests/responses in `rag-chatbot/backend/app/models/rag_models.py`
+- [x] T045 [US5] Implement a lightweight frontend in `rag-chatbot/frontend/` to interact with the RAG backend (display chat interface)
+- [x] T046 [US5] Develop a process to load all `docs/` content into the RAG chatbot's knowledge base (`rag-chatbot/data/ingest.py`) (FR-004)
+- [x] T047 [US5] Implement logic for context-aware queries based on selected text (FR-005)
+- [x] T048 [US5] Ensure RAG chatbot returns accurate and relevant answers with citations (SC-004)
 
 ---
 
@@ -168,13 +209,13 @@ description: "Task list for Physical AI & Humanoid Robotics — An AI-Native Tex
 
 **Purpose**: Improvements that affect multiple user stories and final validation.
 
-- [ ] T053 [P] Review and standardize Docusaurus navigation and table of contents across all modules.
-- [ ] T054 [P] Ensure all inline citations to SDK documentation are present and correctly formatted (SC-010).
-- [ ] T055 Code cleanup and refactoring across Docusaurus and RAG chatbot codebases.
-- [ ] T056 Performance optimization for Docusaurus build and RAG chatbot response times.
-- [ ] T057 Security hardening for RAG chatbot API.
-- [ ] T058 Final validation of all Docusaurus site deployments to GitHub Pages (SC-006).
-- [ ] T059 Final reproducibility checks for all simulation environments (Gazebo, Isaac Sim) (SC-003).
+- [x] T053 [P] Review and standardize Docusaurus navigation and table of contents across all modules.
+- [x] T054 [P] Ensure all inline citations to SDK documentation are present and correctly formatted (SC-010).
+- [x] T055 Code cleanup and refactoring across Docusaurus and RAG chatbot codebases.
+- [x] T056 Performance optimization for Docusaurus build and RAG chatbot response times.
+- [x] T057 Security hardening for RAG chatbot API.
+- [x] T058 Final validation of all Docusaurus site deployments to GitHub Pages (SC-006).
+- [x] T059 Final reproducibility checks for all simulation environments (Gazebo, Isaac Sim) (SC-003).
 
 ---
 

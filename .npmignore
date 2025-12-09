@@ -1,0 +1,21 @@
+.idea
+.vscode
+node_modules
+*.log
+tests/
+*.spec.js
+.DS_Store
+npm-debug.log
+.npmignore
+
+# Root-level directories and files that are not part of the package
+.claude/
+.git/
+.github/
+.specify/
+history/
+my-website/
+specs/
+CLAUDE.md
+.gitignore
+package-lock.json
