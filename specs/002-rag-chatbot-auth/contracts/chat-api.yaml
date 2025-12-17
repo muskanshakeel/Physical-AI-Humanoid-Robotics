@@ -1,0 +1,315 @@
+# API Contracts: Integrated RAG Chatbot for Published Book
+
+## Authentication API
+
+### POST /api/auth/login
+- **Description**: Authenticate user and create session
+- **Request**:
+  - Headers: `Content-Type: application/json`
+  - Body:
+    ```json
+    {
+      "email": "user@example.com",
+      "password": "securePassword123"
+    }
+    ```
+- **Response (200)**:
+  - Headers: `Set-Cookie: session_token=...`
+  - Body:
+    ```json
+    {
+      "success": true,
+      "user": {
+        "id": "uuid-string",
+        "email": "user@example.com",
+        "name": "User Name"
+      },
+      "session_token": "secure-session-token",
+      "expires_at": "2025-12-15T10:30:00Z"
+    }
+    ```
+- **Response (401)**:
+  - Body:
+    ```json
+    {
+      "success": false,
+      "error": "Invalid credentials"
+    }
+    ```
+
+### POST /api/auth/register
+- **Description**: Register a new user
+- **Request**:
+  - Headers: `Content-Type: application/json`
+  - Body:
+    ```json
+    {
+      "email": "user@example.com",
+      "password": "securePassword123",
+      "name": "User Name"
+    }
+    ```
+- **Response (201)**:
+  - Body:
+    ```json
+    {
+      "success": true,
+      "user": {
+        "id": "uuid-string",
+        "email": "user@example.com",
+        "name": "User Name"
+      }
+    }
+    ```
+- **Response (409)**:
+  - Body:
+    ```json
+    {
+      "success": false,
+      "error": "User already exists"
+    }
+    ```
+
+### POST /api/auth/logout
+- **Description**: End user session
+- **Request**:
+  - Headers: `Authorization: Bearer {session_token}`
+- **Response (200)**:
+  - Body:
+    ```json
+    {
+      "success": true,
+      "message": "Successfully logged out"
+    }
+    ```
+
+## Chat API
+
+### POST /api/chat/query
+- **Description**: Submit a query to the RAG system
+- **Request**:
+  - Headers: `Authorization: Bearer {session_token}`, `Content-Type: application/json`
+  - Body:
+    ```json
+    {
+      "query": "What is the main concept of reinforcement learning?",
+      "book_selection": "Optional selected text from the book",
+      "context": {
+        "previous_query_id": "optional-uuid",
+        "session_metadata": {}
+      }
+    }
+    ```
+- **Response (200)**:
+  - Body:
+    ```json
+    {
+      "success": true,
+      "query_id": "uuid-string",
+      "response": {
+        "id": "uuid-string",
+        "content": "Reinforcement learning is a type of machine learning where an agent learns to make decisions by performing actions in an environment to maximize cumulative reward...",
+        "sources": [
+          {
+            "section": "Chapter 3",
+            "title": "Reinforcement Learning Fundamentals",
+            "page_number": 45,
+            "relevance_score": 0.92
+          }
+        ],
+        "confidence_score": 0.87,
+        "response_time_ms": 1250
+      }
+    }
+    ```
+- **Response (429)**:
+  - Body:
+    ```json
+    {
+      "success": false,
+      "error": "Rate limit exceeded"
+    }
+    ```
+
+### GET /api/chat/history
+- **Description**: Retrieve user's chat history
+- **Request**:
+  - Headers: `Authorization: Bearer {session_token}`
+  - Query params: `limit=20`, `offset=0`, `sort=desc`
+- **Response (200)**:
+  - Body:
+    ```json
+    {
+      "success": true,
+      "history": [
+        {
+          "id": "uuid-string",
+          "query": {
+            "id": "uuid-string",
+            "content": "What is the main concept of reinforcement learning?",
+            "timestamp": "2025-12-14T10:00:00Z"
+          },
+          "response": {
+            "id": "uuid-string",
+            "content": "Reinforcement learning is a type of machine learning...",
+            "timestamp": "2025-12-14T10:00:05Z"
+          }
+        }
+      ],
+      "pagination": {
+        "total": 150,
+        "limit": 20,
+        "offset": 0,
+        "has_more": true
+      }
+    }
+    ```
+
+### GET /api/chat/history/{query_id}
+- **Description**: Retrieve a specific query-response pair
+- **Request**:
+  - Headers: `Authorization: Bearer {session_token}`
+- **Response (200)**:
+  - Body:
+    ```json
+    {
+      "success": true,
+      "query": {
+        "id": "uuid-string",
+        "content": "What is the main concept of reinforcement learning?",
+        "timestamp": "2025-12-14T10:00:00Z"
+      },
+      "response": {
+        "id": "uuid-string",
+        "content": "Reinforcement learning is a type of machine learning...",
+        "sources": [
+          {
+            "section": "Chapter 3",
+            "title": "Reinforcement Learning Fundamentals",
+            "page_number": 45,
+            "relevance_score": 0.92
+          }
+        ],
+        "confidence_score": 0.87,
+        "timestamp": "2025-12-14T10:00:05Z"
+      }
+    }
+    ```
+
+## Book Content API
+
+### GET /api/book/content
+- **Description**: Retrieve book content by section or search
+- **Request**:
+  - Headers: `Authorization: Bearer {session_token}`
+  - Query params: `section=Chapter%203` or `search=reinforcement%20learning`
+- **Response (200)**:
+  - Body:
+    ```json
+    {
+      "success": true,
+      "content": [
+        {
+          "id": "uuid-string",
+          "title": "Reinforcement Learning Fundamentals",
+          "content": "Reinforcement learning is a type of machine learning where...",
+          "section": "Chapter 3",
+          "page_number": 45
+        }
+      ]
+    }
+    ```
+
+### GET /api/book/toc
+- **Description**: Retrieve table of contents
+- **Request**:
+  - Headers: `Authorization: Bearer {session_token}`
+- **Response (200)**:
+  - Body:
+    ```json
+    {
+      "success": true,
+      "table_of_contents": [
+        {
+          "section": "Chapter 1",
+          "title": "Introduction to AI",
+          "page_number": 1,
+          "children": []
+        },
+        {
+          "section": "Chapter 2",
+          "title": "Machine Learning Basics",
+          "page_number": 23,
+          "children": []
+        },
+        {
+          "section": "Chapter 3",
+          "title": "Reinforcement Learning Fundamentals",
+          "page_number": 45,
+          "children": []
+        }
+      ]
+    }
+    ```
+
+## Health and Monitoring API
+
+### GET /api/health
+- **Description**: Check system health
+- **Response (200)**:
+  - Body:
+    ```json
+    {
+      "status": "healthy",
+      "timestamp": "2025-12-14T10:30:00Z",
+      "services": {
+        "database": "connected",
+        "vector_db": "connected",
+        "ai_model": "available"
+      }
+    }
+    ```
+
+### GET /api/metrics
+- **Description**: Retrieve system metrics (admin only)
+- **Request**:
+  - Headers: `Authorization: Bearer {admin_token}`
+- **Response (200)**:
+  - Body:
+    ```json
+    {
+      "queries_per_minute": 45,
+      "avg_response_time_ms": 1150,
+      "active_users": 120,
+      "cache_hit_rate": 0.78
+    }
+    ```
+
+## Error Handling
+
+### Standard Error Response Format
+```json
+{
+  "success": false,
+  "error": "Error message describing the issue",
+  "error_code": "ERROR_CODE",
+  "timestamp": "2025-12-14T10:30:00Z"
+}
+```
+
+### Common Error Codes
+- `AUTH_001`: Authentication required
+- `AUTH_002`: Invalid credentials
+- `AUTH_003`: Session expired
+- `VALIDATION_001`: Invalid request format
+- `RATE_LIMIT_001`: Rate limit exceeded
+- `INTERNAL_001`: Internal server error
+- `VECTOR_DB_001`: Vector database unavailable
+- `AI_MODEL_001`: AI model service unavailable
+
+## Security Headers
+All API responses should include:
+- `X-Content-Type-Options: nosniff`
+- `X-Frame-Options: DENY` (where appropriate)
+- `X-XSS-Protection: 1; mode=block`
+- `Strict-Transport-Security: max-age=31536000; includeSubDomains`

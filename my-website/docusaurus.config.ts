@@ -5,8 +5,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Physical AI & Humanoid Robotics — An AI-Native Textbook',
-  tagline: 'Dinosaurs are cool',
+  title: 'Physical AI & Humanoid Robotics',
+  tagline: 'An AI-Native Textbook',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -15,19 +15,14 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  // TODO: Replace 'your-username' and 'your-repo-name' with your GitHub username/organization and repository name.
-  url: 'https://your-username.github.io',
+  url: 'https://muskanshakeel.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  // TODO: Replace 'your-repo-name' with your GitHub repository name.
-  baseUrl: '/your-repo-name/',
+  baseUrl: '/Physical-AI-Humanoid-Robotics/',
 
   // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  // TODO: Replace 'facebook' with your GitHub organization/user name.
-  organizationName: 'your-username', 
-  // TODO: Replace 'docusaurus' with your repo name.
-  projectName: 'your-repo-name',
+  organizationName: 'muskanshakeel',
+  projectName: 'Physical-AI-Humanoid-Robotics',
 
   onBrokenLinks: 'throw',
 
@@ -43,12 +38,12 @@ const config: Config = {
     [
       'classic',
       {
+
+
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/muskanshakeel/Physical-AI-Humanoid-Robotics/tree/main/my-website/',
         },
         blog: {
           showReadingTime: true,
@@ -56,11 +51,8 @@ const config: Config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
+            'https://github.com/muskanshakeel/Physical-AI-Humanoid-Robotics/tree/main/my-website/',
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
@@ -79,9 +71,9 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'My Site',
+      title: 'Physical AI & Humanoid Robotics',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Physical AI & Humanoid Robotics Logo',
         src: 'img/logo.svg',
       },
       items: [
@@ -93,7 +85,7 @@ const config: Config = {
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/muskanshakeel/Physical-AI-Humanoid-Robotics',
           label: 'GitHub',
           position: 'right',
         },
@@ -142,7 +134,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
