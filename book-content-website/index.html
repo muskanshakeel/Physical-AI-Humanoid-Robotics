@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Content Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="root">
+        <div class="container">
+            <header>
+                <h1>Book Content Assistant</h1>
+                <div id="auth-container">
+                    <!-- Authentication buttons will be rendered here -->
+                </div>
+            </header>
+
+            <main>
+                <div class="book-content">
+                    <h2>Physical AI & Humanoid Robotics</h2>
+                    <p>This is a sample book content page. Select text and ask questions about it using the chatbot!</p>
+
+                    <div class="book-section">
+                        <h3>Chapter 1: Introduction to Physical AI</h3>
+                        <p>Physical AI refers to artificial intelligence systems that interact with the physical world through sensing, manipulation, and embodied intelligence. It's a key concept in robotics and autonomous systems. Physical AI combines machine learning with physical interaction capabilities, allowing systems to understand and manipulate real-world objects and environments.</p>
+
+                        <p>In Physical AI, systems learn to interact with physical materials, forces, and environments, bridging the gap between digital intelligence and physical reality. This approach enables more natural and intuitive human-robot interaction.</p>
+                    </div>
+
+                    <div class="book-section">
+                        <h3>Chapter 2: Humanoid Robotics</h3>
+                        <p>Humanoid robotics focuses on creating robots with human-like form and capabilities. These robots often have bipedal locomotion, human-like manipulation abilities, and social interaction skills. Humanoid robots are designed to operate in human environments and potentially work alongside humans, making them valuable for various applications.</p>
+
+                        <p>Humanoid robotics combines biomechanics, control theory, and AI to create robots that can mimic human movements and behaviors. The challenge lies in creating systems that can move and interact as fluidly as humans do.</p>
+                    </div>
+
+                    <div class="book-section">
+                        <h3>Chapter 3: Digital Twins in Robotics</h3>
+                        <p>Digital twins in robotics involve creating virtual models of physical robots to simulate, predict, and optimize their behavior before deployment in real-world scenarios. Simulation is crucial for robotics development, allowing testing of algorithms and behaviors in safe, controlled virtual environments before real-world implementation.</p>
+
+                        <p>Digital twin technology enables real-time monitoring and predictive maintenance of robotic systems by creating virtual replicas of physical robots. This approach significantly reduces development time and costs.</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Chatbot widget will be rendered here -->
+        <div id="chatbot-container"></div>
+    </div>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel" src="auth.js"></script>
+    <script type="text/babel" src="chatbot.js"></script>
+    <script type="text/babel" src="app.js"></script>
+</body>
+</html>
